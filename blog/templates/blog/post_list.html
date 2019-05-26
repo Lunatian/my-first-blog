@@ -1,16 +1,22 @@
+{% load static %}
+
 <html>
-    <head>
+    <head>   
         <title>루나시안의 블로그</title>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
     </head>
     <body>
-        <div>
-            <h1><a href="/">루나시안(류 남편)의 블로그</a></h1>
+        <div calss="page-header">
+            <h1><a href="/">Lunatian's Blog</a></h1>
         </div>
 
         {% for post in posts %} 
-            <div>
-                
-                <h3><a href=""> {{ post.title }}(배포일 : {{ post.published_date }} )</a></h3>
+            <div class="post">                            
+                <div calss="date"><p>(배포일 : {{ post.published_date }} )</p></div>   
+                <h1><a href=""> {{ post.title }}</a></h1>                             
                 <p>{{ post.text|linebreaksbr }}</p>
             </div>            
         {% endfor %}
