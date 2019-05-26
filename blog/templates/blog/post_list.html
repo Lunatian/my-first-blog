@@ -4,19 +4,17 @@
     </head>
     <body>
         <div>
-            <h1><a href="">루나시안(류 남편)의 블로그</a></h1>
+            <h1><a href="/">루나시안(류 남편)의 블로그</a></h1>
         </div>
 
-        <div>
-            <p>2019.05.21 22:17 배포</p>
-            <h2><a href="">첫 번째 포스트</a></h2>
-            <p>드디어 인터넷과 연결했다.</p>
-        </div>
+        {% for post in posts %} 
+            <div>
+                
+                <h3><a href=""> {{ post.title }}(배포일 : {{ post.published_date }} )</a></h3>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>            
+        {% endfor %}
 
-        <div>
-            <p>2019.05.21 22:37 배포</p>
-            <h2><a href="">두 번째 포스트</a></h2>
-            <p>수정본을 인터넷에 연결하는 방법을 알았다.</p>
-        </div>
+       
     </body>
 </html>
